@@ -1,19 +1,23 @@
 var through     = require('through2'),
-    furtivework = require('rework'),
+    rework      = require('rework'),
     classPrefix = require('rework-class-prefix');
 
 module.exports = function(prefix) {
-  return through.obj(function(file, encoding, callback) {
+  return through.obj(function(file, enc, cb) {
+    if (file.isNull()) {
+      cb(null, file);
+      return;
+    }
+
     if (!file.isBuffer()) {
-      callback();
+      cb();
     }
 
     var src = file.contents.toString();
-    var css = rework(src, {})
-                .use(classPrefix(prefix));
+    var css = rework(src, { source: file.path })
+                .use(classPrefix(prefix)).toString({ sourcemap: true });
 
     file.contents = new Buffer(css);
-    this.push(file);
-    callback();
+    cb(null, file);
   });
 };
