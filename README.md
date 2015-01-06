@@ -25,6 +25,21 @@ gulp.task('prefix', function() {
 gulp.task('default', ['prefix']);
 ```
 
+### Using the `ignored` option:
+
+```js
+var gulp        = require('gulp'),
+    classPrefix = require('gulp-class-prefix');
+
+gulp.task('prefix', function() {
+  return gulp.src('my-file.css')
+  .pipe(classPrefix('my-class-prefix-', { ignored: [/\.ng-/, '.some-class'] }))
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['prefix']);
+```
+
 ## License
 
 MIT
