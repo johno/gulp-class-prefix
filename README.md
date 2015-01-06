@@ -1,5 +1,7 @@
 # Gulp Class Prefix
 
+[![Build Status](https://travis-ci.org/johnotander/gulp-class-prefix.svg?branch=master)](https://travis-ci.org/johnotander/gulp-class-prefix)
+
 Gulp plugin to prefix classes in a CSS file.
 
 ## Installation
