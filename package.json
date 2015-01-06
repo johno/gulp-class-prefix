@@ -4,7 +4,7 @@
   "description": "Add a class prefix to further sandbox CSS styling for third-party imports.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,9 @@
     "rework": "^1.0.1",
     "rework-class-prefix": "^0.1.0",
     "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.1",
+    "mocha": "^2.1.0"
   }
 }

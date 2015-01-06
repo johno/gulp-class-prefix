@@ -3,6 +3,8 @@ var through     = require('through2'),
     classPrefix = require('rework-class-prefix');
 
 module.exports = function(prefix, options) {
+  options = options || {};
+
   return through.obj(function(file, enc, cb) {
     if (file.isNull()) {
       cb(null, file);
