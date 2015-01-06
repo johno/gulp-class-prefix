@@ -25,7 +25,7 @@
   "homepage": "https://github.com/johnotander/gulp-class-prefix",
   "dependencies": {
     "rework": "^1.0.1",
-    "rework-class-prefix": "0.0.2",
+    "rework-class-prefix": "^0.1.0",
     "through2": "^0.6.3"
   }
 }
