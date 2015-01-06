@@ -1,6 +1,6 @@
 {
   "name": "gulp-class-prefix",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Add a class prefix to further sandbox CSS styling for third-party imports.",
   "main": "index.js",
   "scripts": {
