@@ -2,7 +2,7 @@ var through     = require('through2'),
     rework      = require('rework'),
     classPrefix = require('rework-class-prefix');
 
-module.exports = function(prefix) {
+module.exports = function(prefix, options) {
   return through.obj(function(file, enc, cb) {
     if (file.isNull()) {
       cb(null, file);
@@ -15,7 +15,7 @@ module.exports = function(prefix) {
 
     var src = file.contents.toString();
     var css = rework(src, { source: file.path })
-                .use(classPrefix(prefix)).toString({ sourcemap: true });
+                .use(classPrefix(prefix, options)).toString({ sourcemap: true });
 
     file.contents = new Buffer(css);
     cb(null, file);
