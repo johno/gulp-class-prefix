@@ -9,8 +9,8 @@ describe('gulp-class-prefix', function() {
   it('should prefix css classes', function(done) {
     var classPrefixStream = classPrefix('prfx-');
 
-    var actual = '.some-class {\n  color: blue;\n}\n\na {\n  text-decoration: none;\n}\n';
-    var expected = '.prfx-some-class {\n  color: blue;\n}\n\na {\n  text-decoration: none;\n}\n';
+    var actual = 'input[disabled] .some-class {\n  color: blue;\n}\n\na {\n  text-decoration: none;\n}\n';
+    var expected = 'input[disabled] .prfx-some-class {\n  color: blue;\n}\n\na {\n  text-decoration: none;\n}\n';
 
     classPrefixStream.once('data', function(file) {
       assert.equal(file.relative, 'default.css');
